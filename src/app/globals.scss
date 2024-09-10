@@ -1,10 +1,5 @@
-@import '../styles/mixins.scss';
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-
-}
+@import '../styles/mixins';
+@import '../styles/colors';
 
 html,
 body {
@@ -14,8 +9,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: $neutral-400;
+  background: $neutral-white;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

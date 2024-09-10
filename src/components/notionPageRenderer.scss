@@ -1,16 +1,27 @@
-@import '../styles/mixins.scss';
+@import '../styles/mixins';
+@import '../styles/colors';
 
 .notion-page {
   @include scrollbar
 }
+
 .notion-embed {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100px;
+  height: 320px;
+
   iframe {
+    border: none;
     width: 100%;
-    body {
-      @include scrollbar
+    &:hover {
+      border: 1px solid $primary-100;
     }
   }
 }
+
 .notion-icon {
   font-size: 1em !important;
 }
@@ -44,5 +55,9 @@ p {
 }
 
 blockquote {
-  font-size: 0.75em !important;
+  font-size: 1em !important;
+}
+
+.notion-link-preview-cover img {
+  object-fit: contain;
 }

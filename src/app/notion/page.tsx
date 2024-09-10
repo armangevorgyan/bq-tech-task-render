@@ -3,9 +3,9 @@ import 'katex/dist/katex.min.css';
 import './notion.scss';
 
 import { Client } from '@notionhq/client';
-import { convertBreadcrumbResponseToBlock, fetchBlock, fetchBlockList, fetchPage } from '@udus/notion-renderer/libs';
-import { BlockList, Breadcrumb, Page } from '@udus/notion-renderer/components';
-import { BreadcrumbBlockObject, PageObject, BlockMapper } from '@udus/notion-renderer/types';
+import { fetchBlock, fetchBlockList, fetchPage } from '@udus/notion-renderer/libs';
+import { Page } from '@udus/notion-renderer/components';
+import { BreadcrumbBlockObject, PageObject } from '@udus/notion-renderer/types';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -36,12 +36,12 @@ async function getData() {
 export default async function HomePage() {
   const {
     blocks,
-    page,
+    page
   } = await getData();
 
   return (
     <>
-      <Page page={page} blocks={blocks} />
+      <Page page={page} blocks={blocks}/>
       {/*<Breadcrumb block={block}/>*/}
       {/*<BlockList blocks={blocks}/>*/}
     </>

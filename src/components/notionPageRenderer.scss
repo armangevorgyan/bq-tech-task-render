@@ -1,25 +1,38 @@
+@import '../styles/mixins.scss';
+
+.notion-page {
+  @include scrollbar
+}
+.notion-embed {
+  iframe {
+    width: 100%;
+    body {
+      @include scrollbar
+    }
+  }
+}
 .notion-icon {
   font-size: 1em !important;
 }
 
 .notion-title {
-  font-size: 1em !important;
+  font-size: 1.25em !important;
 }
 
 
 h1.notion-heading-1,
 .notion-heading-1 h1 {
-  font-size: 1em !important;
+  font-size: 1.25em !important;
 }
 
 h2.notion-heading-2,
 .notion-heading-2 h2 {
-  font-size: 0.75em !important;
+  font-size: 1em !important;
 }
 
 h3.notion-heading-3,
 .notion-heading-3 h3 {
-  font-size: 0.6em !important;
+  font-size: 0.75em !important;
 }
 
 p {
@@ -28,4 +41,8 @@ p {
 
 .notion-table-block-row:first-child, .notion-table-block-row:first-child th {
   background-color: rgb(237, 243, 236);
+}
+
+blockquote {
+  font-size: 0.75em !important;
 }

@@ -1,5 +1,25 @@
-@import '../styles/mixins';
-@import '../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/colors';
+
+.notion-container {
+  display: flex;
+
+  .notion-table-of-contents {
+    position: absolute;
+    top: 425px;
+    align-self: flex-start;
+    z-index: 1;
+    width: 200px;
+  }
+  .notion-table-of-contents > * + * {
+    margin-top: 0.5rem;
+  }
+
+  .notion-block-list{
+    width: calc(100% - 200px);
+    justify-self: flex-end;
+  }
+}
 
 .notion-page {
   @include scrollbar
@@ -16,6 +36,7 @@
   iframe {
     border: none;
     width: 100%;
+
     &:hover {
       border: 1px solid $primary-100;
     }

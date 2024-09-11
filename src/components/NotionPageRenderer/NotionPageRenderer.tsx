@@ -8,6 +8,7 @@ import './notionPageRenderer.scss';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import { BlockBlockObject } from '@udus/notion-renderer/dist/types/notion/block/block';
+import TableOfContents from '@/components/TableContents/TableContents';
 
 const notionToken = process.env.NOTION_API_TOKEN;
 
@@ -33,8 +34,9 @@ export default async function NotionPageRenderer({pageId}: { pageId: string }) {
   } = await getData(pageId);
 
   return (
-    <>
+    <div className="notion-container">
+      <TableOfContents blocks={blocks}/>
       <Page page={page} blocks={blocks}/>
-    </>
+    </div>
   );
 }

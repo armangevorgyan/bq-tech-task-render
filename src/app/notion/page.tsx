@@ -1,4 +1,4 @@
-import NotionPageRenderer from '@/components/NotionPageRenderer';
+import NotionPageRenderer from '@/components/NotionPageRenderer/NotionPageRenderer';
 
 export default function NotionPage() {
   const pageId = process.env.NOTION_PAGE_ID;

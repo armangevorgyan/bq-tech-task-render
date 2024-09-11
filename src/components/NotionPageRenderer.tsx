@@ -1,7 +1,7 @@
 import { Client } from '@notionhq/client';
-import { fetchBlock, fetchBlockList, fetchPage } from '@udus/notion-renderer/libs';
+import { fetchBlockList, fetchPage } from '@udus/notion-renderer/libs';
 import { Page } from '@udus/notion-renderer/components';
-import { BreadcrumbBlockObject, PageObject } from '@udus/notion-renderer/types';
+import { PageObject } from '@udus/notion-renderer/types';
 import '@udus/notion-renderer/styles/globals.css';
 import 'katex/dist/katex.min.css';
 import './notionPageRenderer.scss';
@@ -19,14 +19,10 @@ async function getData(pageId: string) {
   const page = await fetchPage(client, {
     page_id: pageId as string
   });
-  const block = await fetchBlock(client, {
-    block_id: pageId as string
-  });
 
   return {
     blocks: blocks.data as BlockBlockObject[],
-    page: page.data as PageObject,
-    block: block.data as BreadcrumbBlockObject
+    page: page.data as PageObject
   };
 }
 

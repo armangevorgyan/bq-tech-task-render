@@ -15,7 +15,19 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: 'BQ Notion Tech Task',
-  description: 'Notion Like Page'
+  description: 'Notion Like Page',
+  openGraph: {
+    title: 'BQ Notion Tech Task',
+    description: 'Notion Like Page',
+    images: [
+      {
+        url: './favicon.ico',
+        width: 32,
+        height: 32,
+        alt: 'BQ Notion image'
+      }
+    ]
+  }
 };
 
 export default function RootLayout({

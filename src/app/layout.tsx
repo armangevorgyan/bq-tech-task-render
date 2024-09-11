@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     description: 'Notion Like Page',
     images: [
       {
-        url: './favicon.ico',
-        width: 32,
-        height: 32,
+        url: 'https://cdn.prod.website-files.com/639a397b9711984d91a35d74/63f893dbeff00e587043826f_bq_thumbnail_small.png',
+        width: 64,
+        height: 64,
         alt: 'BQ Notion image'
       }
     ]

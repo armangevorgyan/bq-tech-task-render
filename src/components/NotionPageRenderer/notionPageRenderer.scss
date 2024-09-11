@@ -3,22 +3,36 @@
 
 .notion-container {
   display: flex;
+  flex-direction: column;
+  width: 100%;
 
-  .notion-table-of-contents {
-    position: absolute;
-    top: 425px;
-    align-self: flex-start;
-    z-index: 1;
-    width: 200px;
-  }
-  .notion-table-of-contents > * + * {
-    margin-top: 0.5rem;
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    .notion-table-of-contents {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+      margin-top: 10px;
+      @media (min-width: 768px) {
+        margin-top: 80px
+      }
+    }
+
+    .notion-table-of-contents > * + * {
+      margin-top: 0.5rem;
+    }
+
+    .notion-block-list {
+
+    }
   }
 
-  .notion-block-list{
-    width: calc(100% - 200px);
-    justify-self: flex-end;
-  }
 }
 
 .notion-page {
@@ -47,8 +61,8 @@
   font-size: 1em !important;
 }
 
-.notion-title {
-  font-size: 1.25em !important;
+.notion-page-title {
+  font-size: 2.5em !important;
 }
 
 
@@ -81,4 +95,8 @@ blockquote {
 
 .notion-link-preview-cover img {
   object-fit: contain;
+}
+
+.notion-column-list {
+  flex-direction: column-reverse;
 }

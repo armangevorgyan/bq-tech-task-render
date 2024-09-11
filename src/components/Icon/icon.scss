@@ -1,0 +1,37 @@
+.notion-file-icon {
+  display: inline-block;
+  block-size: 1.25em;
+  inline-size: 1.25em;
+}
+
+.notion-file-icon:has(img) {
+  vertical-align: text-top;
+}
+
+.notion-file-icon img {
+  block-size: 100%;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.25em;
+}
+
+.notion-icon {
+  display: inline-block;
+  block-size: 1.25em;
+  inline-size: 1.25em;
+  font-size: 1.25em;
+  color: white;
+}
+
+.notion-icon:has(img) {
+  vertical-align: text-top;
+}
+
+.notion-icon img {
+  block-size: 100%;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.25em;
+}

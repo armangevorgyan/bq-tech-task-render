@@ -1,0 +1,11 @@
+.notion-page-header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  justify-content: center;
+  @media (min-width: 768px) {
+    top: -55px;
+  }
+}

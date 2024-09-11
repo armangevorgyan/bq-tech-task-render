@@ -1,7 +1,6 @@
 import { Client } from '@notionhq/client';
 import { fetchBlockList, fetchPage } from '@udus/notion-renderer/libs';
-import { Page } from '@udus/notion-renderer/components';
-import { PageObject } from '@udus/notion-renderer/types';
+import { BlockList } from '@udus/notion-renderer/components';
 import '@udus/notion-renderer/styles/globals.css';
 import 'katex/dist/katex.min.css';
 import './notionPageRenderer.scss';
@@ -9,6 +8,10 @@ import './notionPageRenderer.scss';
 // @ts-expect-error
 import { BlockBlockObject } from '@udus/notion-renderer/dist/types/notion/block/block';
 import TableOfContents from '@/components/TableContents/TableContents';
+import Cover from '@/components/Cover/Cover';
+import { PageObject } from '@udus/notion-renderer/types';
+import PageHeader from '@/components/PageHeader/PageHeader';
+import { TitleProps } from '@/components/Title/Title';
 
 const notionToken = process.env.NOTION_API_TOKEN;
 
@@ -32,11 +35,16 @@ export default async function NotionPageRenderer({pageId}: { pageId: string }) {
     blocks,
     page
   } = await getData(pageId);
-
   return (
-    <div className="notion-container">
-      <TableOfContents blocks={blocks}/>
-      <Page page={page} blocks={blocks}/>
+    <div className='notion-container'>
+      <Cover cover={page.cover}/>
+      <div className='content'>
+        <TableOfContents blocks={blocks}/>
+        <div>
+          <PageHeader icon={page.icon} title={page.properties.title as TitleProps}/>
+          <BlockList blocks={blocks}/>
+        </div>
+      </div>
     </div>
   );
 }

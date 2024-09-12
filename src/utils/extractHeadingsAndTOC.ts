@@ -21,7 +21,7 @@ const extractHeadingsAndTOC = (blocks: any) => {
       });
   };
 
-  return blocks.flatMap((block: any) => {
+  return blocks?.flatMap((block: any) => {
     if (block.type === 'column_list') {
       return block.column_list.columns.flatMap((column: any) => extractHeadingsAndTOC(column.column.children));
     } else if (block.type.startsWith('heading')) {

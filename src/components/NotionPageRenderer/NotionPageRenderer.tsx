@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
 import { fetchBlockList, fetchPage } from '@udus/notion-renderer/libs';
-import { BlockList } from '@udus/notion-renderer/components';
+// import { BlockList } from '@udus/notion-renderer/components';
 import '@udus/notion-renderer/styles/globals.css';
 import 'katex/dist/katex.min.css';
 import './notionPageRenderer.scss';
@@ -12,6 +12,7 @@ import Cover from '@/components/Cover/Cover';
 import { PageObject } from '@udus/notion-renderer/types';
 import PageHeader from '@/components/PageHeader/PageHeader';
 import { TitleProps } from '@/components/Title/Title';
+import BlockList from '@/components/BlockList/BlockList';
 
 const notionToken = process.env.NOTION_API_TOKEN;
 
@@ -35,11 +36,14 @@ export default async function NotionPageRenderer({pageId}: { pageId: string }) {
     blocks,
     page
   } = await getData(pageId);
+
+  const TableOfContent = structuredClone(blocks);
+
   return (
     <div className='notion-container'>
       <Cover cover={page.cover}/>
       <div className='content'>
-        <TableOfContents blocks={blocks}/>
+        <TableOfContents blocks={TableOfContent}/>
         <div>
           <PageHeader icon={page.icon} title={page.properties.title as TitleProps}/>
           <BlockList blocks={blocks}/>

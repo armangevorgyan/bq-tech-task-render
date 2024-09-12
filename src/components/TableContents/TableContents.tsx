@@ -10,7 +10,7 @@ import '@/styles/notionColors.scss';
 
 const TableOfContents = ({blocks}: { blocks: BlockBlockObject[] }) => {
   const headings = extractHeadingsAndTOC(blocks);
-  return (
+  return headings ? (
     <div id={headings[0].id} className={`notion-block notion-table-of-contents  notion-color-${headings[0].color}`}>
       {headings &&
         headings.map((heading: any) => (
@@ -24,7 +24,7 @@ const TableOfContents = ({blocks}: { blocks: BlockBlockObject[] }) => {
         ))
       }
     </div>
-  );
+  ) : null;
 };
 
 export default TableOfContents;

@@ -1,26 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BQ Tech Task - Notion Page Renderer
+
+This project is a Next.js, TypeScript and SCSS application designed for the BQ tech task. It demonstrates how to render a Notion page using React and various libraries.
+
+#### [Live Link to APP](https://bq-tech-task-render.vercel.app/)
+
+## Library Used
+- React
+- TypeScript
+- @udus/notion-renderer
+- react-syntax-highlighter
+- sass
+
+## Features
+- **Pages:**
+    - /(home) : Displays a task description (Notion style).
+    - /notion: Provided notion page in React app.
 
 ## Getting Started
+### Installation
+### 1. Clone the repository:
 
-First, run the development server:
+ ```sh
+  git clone git@github.com:armangevorgyan/bq-tech-task-render.git
+```
+### 2. Navigate to the project directory:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+  cd bq-notion-tech-task
+```
+### 3. Install dependencies:
+
+```sh
+  npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running the Application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### To start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+  npm run dev
+```
+#### Visit `http://localhost:3000` in your browser to view the application.
 
-## Learn More
+## Building for Production
+
+#### To build the project for production:
+
+```sh
+  npm run build
+```
+
+
+## More about technologies
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -29,8 +61,3 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

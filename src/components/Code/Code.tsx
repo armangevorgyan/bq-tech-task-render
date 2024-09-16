@@ -20,7 +20,6 @@ export const Code: FC<CodeBlockProps> = ({block}) => {
     <div id={block.id} className='notion-block notion-code'>
       <div className='notion-code-header'>
         <div className='notion-code-langage'>
-          {/*{block.code.language}*/}
           <select
             className='select'
             value={selectedLanguage}

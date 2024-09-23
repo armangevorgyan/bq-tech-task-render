@@ -44,7 +44,7 @@ export default async function NotionPageRenderer({pageId}: { pageId: string }) {
       <Cover cover={page.cover}/>
       <div className='content'>
         <TableOfContents blocks={TableOfContent}/>
-        <div>
+        <div className='page-content'>
           <PageHeader icon={page.icon} title={page.properties.title as TitleProps}/>
           <BlockList blocks={blocks}/>
         </div>

@@ -1,12 +1,24 @@
 @import '../../styles/mixins';
 @import '../../styles/colors';
 
+:root {
+  --color-code: rgb(248 248 255) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-code: rgb(43, 43, 43) !important;
+  }
+}
+
 .notion-container {
   display: flex;
   flex-direction: column;
   width: 100%;
 
   .content {
+    background-color: var(--color-bg-default);
+    color: var(--color-text-default);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -15,6 +27,9 @@
     }
 
     .notion-table-of-contents {
+      background-color: var(--color-bg-default);
+      color: var(--color-text-default);
+      fill: var(--color-table-of-contents);
       display: flex;
       flex-direction: column;
       min-width: 200px;
@@ -22,6 +37,11 @@
       @media (min-width: 768px) {
         margin-top: 80px
       }
+    }
+
+    .page-content {
+      background-color: var(--color-bg-default);
+      color: var(--color-text-default);
     }
 
     .notion-table-of-contents > * + * {
@@ -102,11 +122,11 @@ blockquote {
 }
 
 .notion-code {
-  background-color: #f1f1ef;
+  background-color: var(--color-code);
 
   &-body {
     pre {
-      background-color: #f1f1ef !important;
+      background-color: var(--color-code);
     }
   }
 }
